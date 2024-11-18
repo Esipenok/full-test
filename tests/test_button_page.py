@@ -14,21 +14,21 @@ def test_button1_exist(browser):
     simpele_page.open()
     assert simpele_page.button_is_displaed()
 
-# def test_button1_clicked(browser):
-#     simpele_page = SimpleButtonPage(browser)
-#     simpele_page.open()
-#     simpele_page.click_button()
-#     assert 'Submitted' == simpele_page.result_text()
+def test_button1_clicked(browser):
+    simpele_page = SimpleButtonPage(browser)
+    simpele_page.open()
+    simpele_page.click_button()
+    assert 'Submitted' == simpele_page.result_text()
 
 
-def test_button2_clicked():
-    options = Options()
-    options.add_argument('--headless')
-    browser = webdriver.Chrome(options=options)
-    browser.get('https://www.qa-practice.com/elements/button/simple')
-    browser.find_element(By.ID, 'submit-id-submit').click()
-    time.sleep(2)
-    assert 'Submitted' == browser.find_element(By.ID, 'result').text
+# def test_button2_clicked():
+#     options = Options()
+#     options.add_argument('--headless')
+#     browser = webdriver.Chrome(options=options)
+#     browser.get('https://www.qa-practice.com/elements/button/simple')
+#     browser.find_element(By.ID, 'submit-id-submit').click()
+#     time.sleep(2)
+#     assert 'Submitted' == browser.find_element(By.ID, 'result').text
 
 def test_girls():
     options = Options()

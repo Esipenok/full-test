@@ -3,7 +3,7 @@ from selenium.webdriver.support.select import Select
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait #для ожидания
-from selenium.webdriver.support import expected_conditions as EC #для ожидания кондиции
+from selenium.webdriver.support import expected_conditions as EC #для ожидания кондици
 
 
 

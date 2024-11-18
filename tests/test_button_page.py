@@ -3,7 +3,8 @@ from selenium.webdriver.support.select import Select
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait #для ожидания
-from selenium.webdriver.support import expected_conditions as EC #для ожидания кондици
+from selenium.webdriver.support import expected_conditions as EC #для ожидания кондиции
+from selenium.webdriver.chrome.options import Options # это для безголового режима
 
 
 
@@ -20,13 +21,17 @@ def test_button1_exist(browser):
 
 
 def test_button1_clicked():
-    browser = webdriver.Chrome()
+    options = Options()
+    options.add_argument('--headless')
+    browser = webdriver.Chrome(options=options)
     browser.get('https://www.qa-practice.com/elements/button/simple')
     browser.find_element(By.ID, 'submit-id-submit').click()
     assert 'Submitted' == browser.find_element(By.ID, 'result').text
 
 def test_girls():
-    browser = webdriver.Chrome()
+    options = Options()
+    options.add_argument('--headless')
+    browser = webdriver.Chrome(options=options)
     browser.implicitly_wait(2)
     browser.get('https://magento.softwaretestingboard.com/women/tops-women/jackets-women.html')
     WebDriverWait(browser, 10).until(EC.text_to_be_present_in_element((By.TAG_NAME, 'body'), 'Position'))# Для того, что бы подождать время загрузки объекта

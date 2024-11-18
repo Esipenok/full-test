@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait #для ожидания
 from selenium.webdriver.support import expected_conditions as EC #для ожидания кондиции
 from selenium.webdriver.chrome.options import Options # это для безголового режима
+import time
 
 
 
@@ -20,12 +21,13 @@ def test_button1_exist(browser):
 #     assert 'Submitted' == simpele_page.result_text()
 
 
-def test_button1_clicked():
+def test_button2_clicked():
     options = Options()
     options.add_argument('--headless')
     browser = webdriver.Chrome(options=options)
     browser.get('https://www.qa-practice.com/elements/button/simple')
     browser.find_element(By.ID, 'submit-id-submit').click()
+    time.sleep(2)
     assert 'Submitted' == browser.find_element(By.ID, 'result').text
 
 def test_girls():

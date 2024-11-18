@@ -1,5 +1,5 @@
 from pages.test_button import SimpleButtonPage
-from selenium.webdriver.support.select import Select #для работы с выпадающимися списками
+from selenium.webdriver.support.select import Select
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait #для ожидания
